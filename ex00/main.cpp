@@ -2,15 +2,24 @@
 #include "Fixed.hpp"
 
 int main(void) {
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
+    std::cout << "\ndefault constructor" << std::endl;
+	Fixed a;
+	std::cout << a.getRawBits() << std::endl;
+	
+	std::cout << "\ncopy constructor" << std::endl;
+	Fixed b(a);
+	std::cout << b.getRawBits() << std::endl;
 
-    c = b;
+	std::cout << "\ncopy assignment operator" << std::endl;
+	Fixed c;
+	c = b;
+	std::cout << c.getRawBits() << std::endl;
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+	std::cout << "\nsetter_test" << std::endl;
+	a.setRawBits(42);
+	std::cout << a.getRawBits() << std::endl;
 
+	std::cout << "\ntest end" << std::endl;
     return 0;
 }
+
